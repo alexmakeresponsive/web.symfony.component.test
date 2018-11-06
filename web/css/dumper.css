@@ -1,0 +1,12 @@
+tt, code, kbd, samp {
+    font-family: inherit !important;
+}
+body {
+    font-family: sans-serif;
+//            color: #222222;
+    font-size: 14px;
+    line-height: 18px;
+}
+.sf-dump:focus {
+    outline: none;
+}
