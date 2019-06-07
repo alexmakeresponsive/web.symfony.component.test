@@ -9,6 +9,9 @@
 namespace App\Events;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\Event;
+
+
 
 
 class SomeSubscriber implements EventSubscriberInterface
@@ -20,8 +23,13 @@ class SomeSubscriber implements EventSubscriberInterface
         );
     }
 
-    public function onFooAction2()
+    public function onFooAction2( Event $event )
     {
-        echo 'run onFooAction2';
+//        echo 'run onFooAction2';
+        $dumper = require __DIR__ .'/../../web/dumper.php';
+
+        $event->stopPropagation();  // Не уведомлять других подписчиков
+
+        $dumper($event);
     }
 }

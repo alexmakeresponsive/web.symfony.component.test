@@ -71,9 +71,10 @@ $event = new Event($order);
 //Way 2
 $subscriber = new SomeSubscriber();
 $dispatcher->addSubscriber($subscriber);
-$dispatcher->dispatch('acme.foo.action', $event);
+//$dispatcher->dispatch('acme.foo.action', $event);
+$dispatcher->dispatch('acme.foo.action');   // тоже самое
 
-
+//echo PHP_OS_FAMILY; //return Linux
 ?>
 
     </body>
